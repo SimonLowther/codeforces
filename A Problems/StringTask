@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class StringTask {
+    
+    static Scanner scanner = new Scanner(System.in);
+    static String string;
+
+    public static void main(String[] args) {
+	string = scanner.next();
+	string = string.toLowerCase();
+	string = removeVowels(string);
+	string = addPeriods(string);
+	System.out.println(string);
+    }
+
+    static String removeVowels(String string) {
+	String noVowelsString = "";
+	ArrayList<Character> stringArrayList = new ArrayList<Character>();
+	char stringArray [] = string.toCharArray();
+	for (char letter : stringArray) {
+	    stringArrayList.add(letter);
+	}
+	
+	for (int i=0; i < stringArrayList.size(); i++) {
+	    char nextLetter = stringArrayList.get(i);
+	    if(nextLetter == 'a' ||nextLetter == 'e' ||nextLetter == 'i' ||nextLetter == 'o' ||nextLetter == 'u' ||nextLetter == 'y') {
+		continue;
+	    }else {
+		noVowelsString = noVowelsString + nextLetter;
+	    }
+	}
+	
+	return noVowelsString;
+    }
+    
+    static String addPeriods(String string) {
+	String periodString = "";
+	for (int i = 0; i < string.length(); i++) {
+	    periodString = periodString + "." + string.charAt(i);
+	}
+	return periodString;
+    }
+}
