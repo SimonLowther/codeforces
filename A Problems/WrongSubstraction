@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class WrongSubstraction {
+
+    static Scanner scanner = new Scanner(System.in);
+    static int first, second;
+
+    public static void main(String[] args) {
+
+        first = scanner.nextInt();
+        second = scanner.nextInt();
+
+        for (int i = 1; i <= second; i++) {
+
+            if (first % 10 == 0) {
+                first = first / 10;
+            } else {
+                first = first - 1;
+            }
+
+        }
+        System.out.println(first);
+    }
+
+}
